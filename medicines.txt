@@ -1,1 +1,9 @@
-testedrahul
+function MYMODULE_preprocess_page(&$variables) {
+  // prevent caching certain element
+  $variables['my_custom_element'] = [
+    '#markup' => t('My message'),
+    '#cache' => ['max-age' => 0],
+  ];
+  // or prevent caching all page
+  $variables['#cache']['max-age'] = 0;
+}
