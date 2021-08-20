@@ -1,1 +1,2 @@
-testedrahul
+$nids = \Drupal::entityQuery('node')->condition('type','my_custom_type')->execute();
+$nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
